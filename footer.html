@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Footer - Phani Soft Tech</title>
+
+  <link href="bootstrap/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .footer {
+      background-color: #212529;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: auto;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .footer h5 {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #f8f9fa;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #cccccc;
+    }
+
+    .footer .developed {
+      font-size: 0.95rem;
+      color: #adb5bd;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 576px) {
+      .footer h5 {
+        font-size: 1rem;
+      }
+
+      .footer p,
+      .footer .developed {
+        font-size: 0.85rem;
+      }
+    }
+
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <footer class="footer animate__animated animate__fadeInUp  w-100">
+    <h5>
+  <i class="fas fa-wrench text-light me-2"></i> 
+  <span class="text-warning fw-bold">Developed by Syed Yasin</span>
+</h5>
+    
+    <p>&copy; 2025 | All rights reserved.</p>
+    
+  </footer>
+
+</body>
+</html>
