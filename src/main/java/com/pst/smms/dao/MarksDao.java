@@ -84,7 +84,7 @@ public class MarksDao {
 	public int	addMarksData(MarksBo bo) throws  ClassNotFoundException,SQLException{
 		
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+			Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 			PreparedStatement ps=con.prepareStatement( ADD_MARKS_QUERY);
 			ps.setString(1, bo.getExamType());
 			ps.setInt(2, bo.getYear());
@@ -107,7 +107,7 @@ public class MarksDao {
 	public int	updateMarksData(int student_id,MarksBo bo) throws  ClassNotFoundException,SQLException{
 		
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+			Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 			PreparedStatement ps=con.prepareStatement( UPDATE_STUDENT_MARKS);
 			ps.setString(1, bo.getExamType());
 			ps.setInt(2, bo.getYear());
@@ -131,7 +131,7 @@ public class MarksDao {
 	public List<MarksDto> getAllStudentMarks() throws  ClassNotFoundException,SQLException {
 		List<MarksDto> markslist=new ArrayList<MarksDto>();
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 		PreparedStatement ps=con.prepareStatement( GET_ALL_STUDENT_MARKS);
 		ResultSet rs =ps.executeQuery();
 		while(rs.next()) {
@@ -159,7 +159,7 @@ public class MarksDao {
 	public MarksDto getMarksByRollNumberAndExamType(int rollNumber,String examType) throws ClassNotFoundException, SQLException{
 		MarksDto dto =null;
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 		PreparedStatement ps=con.prepareStatement( GET_MARKS_BY_ROLLNUMBER_AND_TYPE );
 		ps.setInt(1, rollNumber);
 		ps.setString(2,examType );
@@ -172,7 +172,7 @@ public class MarksDao {
 	}
 	public int DeleteMarksByRollNumberAndExamType(int rollNumber, String examType)throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 		PreparedStatement ps=con.prepareStatement( DELETE_MARKS);
 		ps.setInt(1, rollNumber);
 		ps.setString(2, examType);
@@ -183,7 +183,7 @@ public class MarksDao {
 	public List<MarksDto> getRollNumber(String rollNumber) throws  ClassNotFoundException,SQLException {
 		List<MarksDto> markslist=new ArrayList<MarksDto>();
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+		Connection con=DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 		PreparedStatement ps=con.prepareStatement( GET_MARKS );
 		ps.setString(1, rollNumber);
 		ResultSet rs =ps.executeQuery();

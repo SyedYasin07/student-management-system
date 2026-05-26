@@ -29,7 +29,7 @@ public class StudentDao {
     	  List<StudentDto> list = new ArrayList<StudentDto>(); 
         try {
         	 Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+             Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 
              PreparedStatement ps = con.prepareStatement(SELECT_ALL_STUDENTS);
              ResultSet rs=ps.executeQuery();
@@ -49,7 +49,7 @@ public class StudentDao {
     // ✅ Insert new student
     public int createNewStudent(StudentBo bo) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
              PreparedStatement ps = con.prepareStatement(ADD_NEW_STUDENT) ;
             		 
 
@@ -71,7 +71,7 @@ public class StudentDao {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+            Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
 
             PreparedStatement ps = con.prepareStatement(GET_STUDENT_BY_ROLL);
             ps.setInt(1, rollNumber);
@@ -102,7 +102,7 @@ public class StudentDao {
     public int updateStudent(StudentBo bo) {
         int rows = 0;
         try (
-            Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+            Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
             PreparedStatement ps = con.prepareStatement(
                 "UPDATE smms.student SET full_name = ?, gender = ?, dob = ?, mobile = ?, email = ?, password = ? WHERE roll_number = ?");
         ) {
@@ -124,7 +124,7 @@ public class StudentDao {
     public int deleteByRollNumber(int rollNumber) throws Exception {
         int result = 0;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
         PreparedStatement ps = con.prepareStatement(DELETE_MARKS);
         ps.setInt(1, rollNumber);
         result = ps.executeUpdate();
@@ -134,7 +134,7 @@ public class StudentDao {
     	StudentDto dto = null;
         int result = 0;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/smms?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
         PreparedStatement ps = con.prepareStatement(SEARCH_MARKS);
         ps.setInt(1, rollNumber);
         ResultSet rs = ps.executeQuery();

@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.smms</groupId>
-    <artifactId>ROOT</artifactId>
+    <groupId>com.pst</groupId>
+    <artifactId>student-management-system</artifactId>
     <version>1.0</version>
 
     <packaging>war</packaging>
@@ -14,11 +14,17 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+
+        <!-- MySQL JDBC -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
 
         <!-- Servlet API -->
         <dependency>
@@ -36,38 +42,31 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- JSTL -->
+        <!-- JSTL API -->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>3.0.0</version>
         </dependency>
 
+        <!-- JSTL Implementation -->
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>3.0.1</version>
         </dependency>
 
-        <!-- MySQL -->
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>9.3.0</version>
-        </dependency>
-
     </dependencies>
 
     <build>
 
-        <!-- Old Dynamic Web Project src -->
-        <sourceDirectory>src</sourceDirectory>
-
         <finalName>ROOT</finalName>
+
+        <sourceDirectory>src/main/java</sourceDirectory>
 
         <plugins>
 
-            <!-- Compiler -->
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -77,6 +76,7 @@
                     <source>21</source>
                     <target>21</target>
                 </configuration>
+
             </plugin>
 
             <!-- WAR Plugin -->
@@ -86,8 +86,9 @@
                 <version>3.4.0</version>
 
                 <configuration>
-                    <warSourceDirectory>WebContent</warSourceDirectory>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
                 </configuration>
+
             </plugin>
 
         </plugins>
