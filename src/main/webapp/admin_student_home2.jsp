@@ -6,20 +6,28 @@
  <%@page import="com.pst.smms.DTO.StudentDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="com.pst.smms.DTO.StudentDto"%>
+
+<%
+StudentDto dto =
+(StudentDto)session.getAttribute("student");
+
+if(dto == null){
+    response.sendRedirect("Admin_Student_Login.jsp");
+    return;
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin Student Home</title>
+    <title> Student Home</title>
     <link href="bootstrap/bootstrap.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
- <%
-                List<StudentDto> studentList = (List<StudentDto>) request.getAttribute("studentList");
-               
-            %>
+
 
 <%@ include file="header.html" %>
 <%@ include file="NavBar3.html" %>
@@ -62,7 +70,7 @@
 
 
 <div class="container text-center mt-4">
-    <h4 class="text-primary mb-3">Admin Student Home</h4>
+    <h4 class="text-primary mb-3"> Student Home</h4>
 
   <div class="row mb-4">
   <div class="col-md-3 text-start">
@@ -90,10 +98,7 @@
                 </tr>
             </thead>
             <tbody>
-            <%
-            for( StudentDto dto:studentList){
-            
-            %>
+          
 
         <tr>
             <td><%= dto.getRollNumber() %></td>
@@ -108,20 +113,16 @@
                     <i class="bi bi-eye-fill fs-5"></i>
                 </a> 
                 <!-- Edit Icon -->
-                <a href="Update_Student_Controller?rollNumber=<%=dto.getRollNumber()%>" class="text-primary mx-1" title="Edit">
+               <%--  <a href="Update_Student_Controller?rollNumber=<%=dto.getRollNumber()%>" class="text-primary mx-1" title="Edit">
                     <i class="bi bi-pencil-square fs-5"></i>
                 </a>
                 <!-- Delete Icon -->
                 <a href="Delete_Student_Controller?rollNumber=<%=dto.getRollNumber()%>" class="text-danger mx-1" title="Delete" onclick="return confirm('Are you sure you want to delete this student?');">
                     <i class="bi bi-trash-fill fs-5"></i>
-                </a>
+                </a> --%>
             </td>
         </tr>
-<%
-        
-    } 
-%>
-            </tbody>
+        </tbody>
         </table>
     </div>
     

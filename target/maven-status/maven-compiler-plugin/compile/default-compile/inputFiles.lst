@@ -5,6 +5,8 @@ D:\Git\student-management-system\src\main\java\com\pst\smms\controller\Admin_Stu
 D:\Git\student-management-system\src\main\java\com\pst\smms\controller\Admin_Student_HomeController.java
 D:\Git\student-management-system\src\main\java\com\pst\smms\controller\Delete_MarksController.java
 D:\Git\student-management-system\src\main\java\com\pst\smms\controller\Delete_Student_Controller.java
+D:\Git\student-management-system\src\main\java\com\pst\smms\controller\LoginController.java
+D:\Git\student-management-system\src\main\java\com\pst\smms\controller\LogOutController.java
 D:\Git\student-management-system\src\main\java\com\pst\smms\controller\MarksController.java
 D:\Git\student-management-system\src\main\java\com\pst\smms\controller\Search_Student_Controller.java
 D:\Git\student-management-system\src\main\java\com\pst\smms\controller\Search_Student_Controller2.java

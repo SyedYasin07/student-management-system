@@ -1,10 +1,6 @@
 package com.pst.smms.service;
 
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -98,6 +94,16 @@ public class StudentService {
 	    public StudentDto SearchStudentByRollNumber(int rollNumber) throws Exception {
 	        StudentDao dao = new StudentDao();
 	        return dao.SearchByRollNumber(rollNumber);
+	    }
+		    public StudentDto loginStudent(
+	            int rollNumber,
+	            String password) {
+
+	        StudentDao dao = new StudentDao();
+
+	        return dao.loginStudent(
+	                rollNumber,
+	                password);
 	    }
 
 

@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin Student Home</title>
+    <title> Student Home</title>
     <link href="bootstrap/bootstrap.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
@@ -22,7 +22,7 @@
             %>
 
 <%@ include file="header.html" %>
-<%@ include file="Navbar.html" %>
+<%@ include file="NavBar3.html" %>
 
 <%-- <% 
     String msg = (String) request.getAttribute("message");
@@ -62,11 +62,11 @@
 
 
 <div class="container text-center mt-4">
-    <h4 class="text-primary mb-3">Admin Student Home</h4>
+    <h4 class="text-primary mb-3"> Student Home</h4>
 
   <div class="row mb-4">
   <div class="col-md-3 text-start">
-    <button class="btn btn-warning w-100" onclick="window.location.href='Search_student.jsp'">Search</button>
+    <button class="btn btn-warning w-100" onclick="window.location.href='Search_student_admin.jsp'">Search</button>
   </div>
  <!--  <div class="col-md-6 text-end">
     <button class="btn btn-warning w-100" onclick="window.location.href='New_student.jsp'">Add New Student</button>
@@ -111,10 +111,10 @@
                 <a href="Update_Student_Controller?rollNumber=<%=dto.getRollNumber()%>" class="text-primary mx-1" title="Edit">
                     <i class="bi bi-pencil-square fs-5"></i>
                 </a>
-                <!-- Delete Icon -->
+                
                 <a href="Delete_Student_Controller?rollNumber=<%=dto.getRollNumber()%>" class="text-danger mx-1" title="Delete" onclick="return confirm('Are you sure you want to delete this student?');">
                     <i class="bi bi-trash-fill fs-5"></i>
-                </a>
+                </a> 
             </td>
         </tr>
 <%

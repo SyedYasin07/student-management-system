@@ -22,6 +22,8 @@ public class StudentDao {
 	  "SELECT * FROM smms.student WHERE roll_number=?";
 	  private static final String DELETE_MARKS="DELETE FROM smms.student WHERE roll_number = ?";
 	  private static final String SEARCH_MARKS="select*from smms.student where roll_number=?";
+       private static final String STUDENT_LOGIN =
+  			"SELECT * FROM smms.student WHERE roll_number=? AND password=?";
 	 
 
     // ✅ Fetch all students
@@ -157,6 +159,47 @@ public class StudentDao {
     
         return dto;
     }
+    public StudentDto loginStudent(int rollNumber, String password) {    	
+        StudentDto dto = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+           
+            Connection con =
+                    DriverManager.getConnection(
+                            "jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+
+            PreparedStatement ps =
+                    con.prepareStatement(STUDENT_LOGIN);
+
+            ps.setInt(1, rollNumber);
+            ps.setString(2, password);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()) {
+
+                dto = new StudentDto();
+
+                dto.setRollNumber(rs.getInt("roll_number"));
+                dto.setFullName(rs.getString("full_name"));
+                dto.setGender(rs.getString("gender"));
+                dto.setDateofbirth(rs.getDate("dob"));
+                dto.setMobileNumber(rs.getString("mobile"));
+                dto.setEmail(rs.getString("email"));
+                dto.setPassword(rs.getString("password"));
+            }
+
+            rs.close();
+            ps.close();
+            con.close();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        return dto;
+    }
+
 
 	
 }
