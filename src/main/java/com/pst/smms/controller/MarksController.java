@@ -1,11 +1,5 @@
 package com.pst.smms.controller;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -13,6 +7,13 @@ import com.pst.smms.Common.SmmsConstants;
 import com.pst.smms.DTO.MarksDto;
 import com.pst.smms.Vo.MarksVo;
 import com.pst.smms.service.MarksService;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/MarksController")

@@ -81,7 +81,7 @@
 <body>
 
   <%@ include file="header.html" %>
-  <%@ include file="NavBar2.html" %>
+  <%@ include file="Navbar.html" %>
 
   <div class="main-container">
     <div class="card-box animate__animated animate__fadeInLeft">

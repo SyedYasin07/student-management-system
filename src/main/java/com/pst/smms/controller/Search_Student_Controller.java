@@ -1,14 +1,10 @@
 package com.pst.smms.controller;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.pst.smms.Bo.StudentBo;
 import com.pst.smms.DTO.StudentDto;
-import com.pst.smms.Vo.StudentVo;
-import com.pst.smms.dao.StudentDao;
 import com.pst.smms.service.StudentService;
 
 import jakarta.servlet.RequestDispatcher;
@@ -86,7 +82,7 @@ public class Search_Student_Controller extends HttpServlet {
 	        e.printStackTrace();
 	        request.setAttribute("message", "Exception occurred: " + e.getMessage());
 	        request.setAttribute("messageClass", "text-danger");
-	        request.getRequestDispatcher("admin_student_home.jsp").forward(request, response);
+	        request.getRequestDispatcher("Admin-home.jsp").forward(request, response);
 	    }
 	}
 }
