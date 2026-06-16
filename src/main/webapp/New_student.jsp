@@ -3,6 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="icons/smms.png">
   <title>New Student</title>
   <link rel="stylesheet" href="bootstrap/bootstrap.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

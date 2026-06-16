@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="icons/smms.png">
 <title>Contact Us - SMMS</title>
 
 <link href="bootstrap/bootstrap.css" rel="stylesheet">

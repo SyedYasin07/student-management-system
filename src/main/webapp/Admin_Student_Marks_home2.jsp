@@ -6,9 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <link rel="stylesheet" href="bootstrap/bootstrap.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="icon" type="image/png" href="icons/smms.png">
 <title>Admin Student Home</title>
 </head>
 <body>

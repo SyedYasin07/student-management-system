@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
  <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+<link rel="icon" type="image/png" href="icons/smms.png"> 
 <title>Update student marks</title>
 </head>
 <style>

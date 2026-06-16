@@ -3,6 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="icons/smms.png">
   <title>Admin Home - Student Marks Management</title>
   <link href="bootstrap/bootstrap.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login Page</title>
+<link rel="icon" type="image/png" href="icons/smms.png">
 <link href="bootstrap/bootstrap.css" rel="stylesheet" > 
 </head>
 <style>
