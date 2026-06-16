@@ -20,7 +20,7 @@ public class StudentDao {
 	
 	  private static final String GET_STUDENT_BY_ROLL =
 	  "SELECT * FROM railway.student WHERE roll_number=?";
-	  private static final String DELETE_MARKS="DELETE FROM railway.student WHERE roll_number = ?";
+	//   private static final String DELETE_MARKS="DELETE FROM railway.student WHERE roll_number = ?";
 	  private static final String SEARCH_MARKS="select*from railway.student where roll_number=?";
        private static final String STUDENT_LOGIN =
   			"SELECT * FROM railway.student WHERE roll_number=? AND password=?";
@@ -123,13 +123,31 @@ public class StudentDao {
         }
         return rows;
     }
-    public int deleteByRollNumber(int rollNumber) throws Exception {
-        int result = 0;
+      public int deleteByRollNumber(int rollNumber) throws Exception {
+
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
-        PreparedStatement ps = con.prepareStatement(DELETE_MARKS);
-        ps.setInt(1, rollNumber);
-        result = ps.executeUpdate();
+
+        Connection con = DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/smms", "root", "$yasin4758");
+
+        con.setAutoCommit(false);
+
+        PreparedStatement ps1 = con.prepareStatement(
+            "DELETE FROM student_marks WHERE roll_number = ?");
+        ps1.setInt(1, rollNumber);
+        ps1.executeUpdate();
+
+        PreparedStatement ps2 = con.prepareStatement(
+            "DELETE FROM student WHERE roll_number = ?");
+        ps2.setInt(1, rollNumber);
+        int result = ps2.executeUpdate();
+
+        con.commit();
+
+        ps1.close();
+        ps2.close();
+        con.close();
+
         return result;
     }
     public StudentDto SearchByRollNumber(int rollNumber) throws Exception {

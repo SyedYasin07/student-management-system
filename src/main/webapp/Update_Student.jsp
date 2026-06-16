@@ -136,7 +136,8 @@
 
                 <div class="col-md-6">
                     <label>Date of Birth:</label>
-                    <input type="date" name="dob" required value="<%= dto.getDateofbirth() %>">
+                       <input type="date" name="dob"
+       value="<%= dto.getDateofbirth().toString() %>">
                 </div>
 
                 <div class="col-md-6">
