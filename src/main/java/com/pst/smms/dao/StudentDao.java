@@ -106,7 +106,7 @@ public class StudentDao {
         try (
             Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
             PreparedStatement ps = con.prepareStatement(
-                "UPDATE smms.student SET full_name = ?, gender = ?, dob = ?, mobile = ?, email = ?, password = ? WHERE roll_number = ?");
+                "UPDATE railway.student SET full_name = ?, gender = ?, dob = ?, mobile = ?, email = ?, password = ? WHERE roll_number = ?");
         ) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             ps.setString(1, bo.getName());
@@ -123,24 +123,32 @@ public class StudentDao {
         }
         return rows;
     }
-      public int deleteByRollNumber(int rollNumber) throws Exception {
+     public int deleteByRollNumber(int rollNumber) {
+    int result = 0;
 
+    try {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         Connection con = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/smms", "root", "$yasin4758");
+            "jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+            "root",
+            "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL"
+        );
 
         con.setAutoCommit(false);
 
         PreparedStatement ps1 = con.prepareStatement(
-            "DELETE FROM student_marks WHERE roll_number = ?");
+            "DELETE FROM railway.student_marks WHERE roll_number = ?"
+        );
         ps1.setInt(1, rollNumber);
         ps1.executeUpdate();
 
         PreparedStatement ps2 = con.prepareStatement(
-            "DELETE FROM student WHERE roll_number = ?");
+            "DELETE FROM railway.student WHERE roll_number = ?"
+        );
         ps2.setInt(1, rollNumber);
-        int result = ps2.executeUpdate();
+
+        result = ps2.executeUpdate();
 
         con.commit();
 
@@ -148,8 +156,12 @@ public class StudentDao {
         ps2.close();
         con.close();
 
-        return result;
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+
+    return result;
+}
     public StudentDto SearchByRollNumber(int rollNumber) throws Exception {
     	StudentDto dto = null;
         int result = 0;
