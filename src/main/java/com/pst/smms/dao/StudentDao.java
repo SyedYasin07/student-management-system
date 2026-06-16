@@ -13,17 +13,17 @@ import com.pst.smms.DTO.StudentDto;
 
 public class StudentDao {
 
-    private static final String SELECT_ALL_STUDENTS = "SELECT * FROM smms.student";
-    private static final String ADD_NEW_STUDENT = "INSERT INTO smms.student VALUES (?, ?, ?, ?, ?, ?, ?)";
+    private static final String SELECT_ALL_STUDENTS = "SELECT * FROM railway.student";
+    private static final String ADD_NEW_STUDENT = "INSERT INTO railway.student VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String UPDATE_STUDENT_BY_ROLLNUMBER = 
-        "UPDATE smms.student SET full_name=?, gender=?, dob=?, mobile=?, email=?, password=? WHERE roll_number=?";
+        "UPDATE railway.student SET full_name=?, gender=?, dob=?, mobile=?, email=?, password=? WHERE roll_number=?";
 	
 	  private static final String GET_STUDENT_BY_ROLL =
-	  "SELECT * FROM smms.student WHERE roll_number=?";
-	  private static final String DELETE_MARKS="DELETE FROM smms.student WHERE roll_number = ?";
-	  private static final String SEARCH_MARKS="select*from smms.student where roll_number=?";
+	  "SELECT * FROM railway.student WHERE roll_number=?";
+	  private static final String DELETE_MARKS="DELETE FROM railway.student WHERE roll_number = ?";
+	  private static final String SEARCH_MARKS="select*from railway.student where roll_number=?";
        private static final String STUDENT_LOGIN =
-  			"SELECT * FROM smms.student WHERE roll_number=? AND password=?";
+  			"SELECT * FROM railway.student WHERE roll_number=? AND password=?";
 	 
 
     // ✅ Fetch all students

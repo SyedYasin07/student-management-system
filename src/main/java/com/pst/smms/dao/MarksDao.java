@@ -13,9 +13,9 @@ import com.pst.smms.DTO.MarksDto;
 public class MarksDao {
 	
 	
-	private static final String ADD_MARKS_QUERY="insert into student_marks(exam_type,exam_year,sub1,sub2,sub3,sub4,sub5,sub6,total_marks,percentage,grade,result,roll_number)values(?,?,?,?,?,?,?,?,?,?,?,?,?)";	
+	private static final String ADD_MARKS_QUERY="insert into railway.student_marks(exam_type,exam_year,sub1,sub2,sub3,sub4,sub5,sub6,total_marks,percentage,grade,result,roll_number)values(?,?,?,?,?,?,?,?,?,?,?,?,?)";	
 	
-	private static final String GET_ALL_STUDENT_MARKS="select sm.student_id,st.roll_number ,st.full_name,sm.exam_type,sm.exam_year,sm.sub1,sm.sub2,sm.sub3,sm.sub4,sm.sub5,sm.sub6,sm.total_marks,sm.percentage,sm.grade,sm.result from student st INNER JOIN student_marks sm ON st.roll_number=sm.roll_number";
+	private static final String GET_ALL_STUDENT_MARKS="select sm.student_id,st.roll_number ,st.full_name,sm.exam_type,sm.exam_year,sm.sub1,sm.sub2,sm.sub3,sm.sub4,sm.sub5,sm.sub6,sm.total_marks,sm.percentage,sm.grade,sm.result from railway.student st INNER JOIN railway.student_marks sm ON st.roll_number=sm.roll_number";
 			private static final String GET_MARKS_BY_ROLLNUMBER_AND_TYPE = """
 		    SELECT 
 		        sm.student_id,
@@ -37,9 +37,9 @@ public class MarksDao {
 		        sm.grade,
 		        sm.result
 		    FROM 
-		        student st
+		        railway.student st
 		    INNER JOIN 
-		        smms.student_marks sm 
+		        railway.student_marks sm 
 		    ON 
 		        st.roll_number = sm.roll_number
 		    WHERE 
@@ -48,8 +48,8 @@ public class MarksDao {
 		    """;
 
 	
-		private static final String UPDATE_STUDENT_MARKS="update smms.student_marks set exam_type=?,exam_year=?,sub1=?,sub2=?,sub3=?,sub4=?,sub5=?,sub6=?,total_marks=?,percentage=?,grade=?,result=? where student_id=?";
-		private static final String DELETE_MARKS="delete from smms.student_marks where roll_number=? and exam_type=?";
+		private static final String UPDATE_STUDENT_MARKS="update railway.student_marks set exam_type=?,exam_year=?,sub1=?,sub2=?,sub3=?,sub4=?,sub5=?,sub6=?,total_marks=?,percentage=?,grade=?,result=? where student_id=?";
+		private static final String DELETE_MARKS="delete from railway.student_marks where roll_number=? and exam_type=?";
 		private static final String GET_MARKS = """
 			    SELECT 
 			        st.roll_number,
@@ -67,7 +67,7 @@ public class MarksDao {
 			        sm.grade,
 			        sm.result
 			    FROM 
-			        smms.student st
+			       railway.student st
 			    INNER JOIN 
 			        student_marks sm ON st.roll_number = sm.roll_number
 			    WHERE 
