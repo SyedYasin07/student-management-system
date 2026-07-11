@@ -13,17 +13,17 @@ import com.pst.smms.DTO.StudentDto;
 
 public class StudentDao {
 
-    private static final String SELECT_ALL_STUDENTS = "SELECT * FROM railway.student";
-    private static final String ADD_NEW_STUDENT = "INSERT INTO railway.student VALUES (?, ?, ?, ?, ?, ?, ?)";
+    private static final String SELECT_ALL_STUDENTS = "SELECT * FROM student";
+    private static final String ADD_NEW_STUDENT = "INSERT INTO student VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String UPDATE_STUDENT_BY_ROLLNUMBER = 
-        "UPDATE railway.student SET full_name=?, gender=?, dob=?, mobile=?, email=?, password=? WHERE roll_number=?";
+        "UPDATE student SET full_name=?, gender=?, dob=?, mobile=?, email=?, password=? WHERE roll_number=?";
 	
 	  private static final String GET_STUDENT_BY_ROLL =
-	  "SELECT * FROM railway.student WHERE roll_number=?";
+	  "SELECT * FROM student WHERE roll_number=?";
 	//   private static final String DELETE_MARKS="DELETE FROM railway.student WHERE roll_number = ?";
-	  private static final String SEARCH_MARKS="select*from railway.student where roll_number=?";
+	  private static final String SEARCH_MARKS="select*from student where roll_number=?";
        private static final String STUDENT_LOGIN =
-  			"SELECT * FROM railway.student WHERE roll_number=? AND password=?";
+  			"SELECT * FROM student WHERE roll_number=? AND password=?";
 	 
 
     // ✅ Fetch all students
@@ -31,7 +31,7 @@ public class StudentDao {
     	  List<StudentDto> list = new ArrayList<StudentDto>(); 
         try {
         	 Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+             Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
 
              PreparedStatement ps = con.prepareStatement(SELECT_ALL_STUDENTS);
              ResultSet rs=ps.executeQuery();
@@ -51,7 +51,7 @@ public class StudentDao {
     // ✅ Insert new student
     public int createNewStudent(StudentBo bo) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+        Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
              PreparedStatement ps = con.prepareStatement(ADD_NEW_STUDENT) ;
             		 
 
@@ -73,7 +73,7 @@ public class StudentDao {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+            Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
 
             PreparedStatement ps = con.prepareStatement(GET_STUDENT_BY_ROLL);
             ps.setInt(1, rollNumber);
@@ -104,9 +104,9 @@ public class StudentDao {
     public int updateStudent(StudentBo bo) {
         int rows = 0;
         try (
-            Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+            Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
             PreparedStatement ps = con.prepareStatement(
-                "UPDATE railway.student SET full_name = ?, gender = ?, dob = ?, mobile = ?, email = ?, password = ? WHERE roll_number = ?");
+                "UPDATE student SET full_name = ?, gender = ?, dob = ?, mobile = ?, email = ?, password = ? WHERE roll_number = ?");
         ) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             ps.setString(1, bo.getName());
@@ -130,21 +130,21 @@ public class StudentDao {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         Connection con = DriverManager.getConnection(
-            "jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
-            "root",
-            "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL"
+            "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+            "2EQjPBpUxoPoZg7.root",
+            "LRGirU0t6adfN74N"
         );
 
         con.setAutoCommit(false);
 
         PreparedStatement ps1 = con.prepareStatement(
-            "DELETE FROM railway.student_marks WHERE roll_number = ?"
+            "DELETE FROM student_marks WHERE roll_number = ?"
         );
         ps1.setInt(1, rollNumber);
         ps1.executeUpdate();
 
         PreparedStatement ps2 = con.prepareStatement(
-            "DELETE FROM railway.student WHERE roll_number = ?"
+            "DELETE FROM student WHERE roll_number = ?"
         );
         ps2.setInt(1, rollNumber);
 
@@ -166,7 +166,7 @@ public class StudentDao {
     	StudentDto dto = null;
         int result = 0;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+        Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
         PreparedStatement ps = con.prepareStatement(SEARCH_MARKS);
         ps.setInt(1, rollNumber);
         ResultSet rs = ps.executeQuery();
@@ -196,7 +196,7 @@ public class StudentDao {
            
             Connection con =
                     DriverManager.getConnection(
-                            "jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL");
+                            "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
 
             PreparedStatement ps =
                     con.prepareStatement(STUDENT_LOGIN);
