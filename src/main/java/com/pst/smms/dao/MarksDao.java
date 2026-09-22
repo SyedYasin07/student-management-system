@@ -109,7 +109,7 @@ public class MarksDao {
 	public int	updateMarksData(int student_id,MarksBo bo) throws  ClassNotFoundException,SQLException{
 		
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
+			Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
 			PreparedStatement ps=con.prepareStatement( UPDATE_STUDENT_MARKS);
 			ps.setString(1, bo.getExamType());
 			ps.setInt(2, bo.getYear());
@@ -162,7 +162,7 @@ public class MarksDao {
 	public MarksDto getMarksByRollNumberAndExamType(int rollNumber,String examType) throws ClassNotFoundException, SQLException{
 		MarksDto dto =null;
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
+		Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
 		PreparedStatement ps=con.prepareStatement( GET_MARKS_BY_ROLLNUMBER_AND_TYPE );
 		ps.setInt(1, rollNumber);
 		ps.setString(2,examType );
@@ -175,7 +175,7 @@ public class MarksDao {
 	}
 	public int DeleteMarksByRollNumberAndExamType(int rollNumber, String examType)throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
+		Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
 		PreparedStatement ps=con.prepareStatement( DELETE_MARKS);
 		ps.setInt(1, rollNumber);
 		ps.setString(2, examType);
@@ -186,7 +186,7 @@ public class MarksDao {
 	public List<MarksDto> getRollNumber(String rollNumber) throws  ClassNotFoundException,SQLException {
 		List<MarksDto> markslist=new ArrayList<MarksDto>();
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "LRGirU0t6adfN74N");
+		Connection con=DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
 		PreparedStatement ps=con.prepareStatement( GET_MARKS );
 		ps.setString(1, rollNumber);
 		ResultSet rs =ps.executeQuery();
