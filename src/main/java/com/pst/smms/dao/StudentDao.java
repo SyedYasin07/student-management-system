@@ -33,9 +33,9 @@ public class StudentDao {
         	 Class.forName("com.mysql.cj.jdbc.Driver");
             	Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
-
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
              PreparedStatement ps = con.prepareStatement(SELECT_ALL_STUDENTS);
              ResultSet rs=ps.executeQuery();
            
@@ -56,8 +56,9 @@ public class StudentDao {
         Class.forName("com.mysql.cj.jdbc.Driver");
         	Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
              PreparedStatement ps = con.prepareStatement(ADD_NEW_STUDENT) ;
             		 
 
@@ -81,9 +82,9 @@ public class StudentDao {
             Class.forName("com.mysql.cj.jdbc.Driver");
             	Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
-
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
             PreparedStatement ps = con.prepareStatement(GET_STUDENT_BY_ROLL);
             ps.setInt(1, rollNumber);
             ResultSet rs = ps.executeQuery();
@@ -115,8 +116,9 @@ public class StudentDao {
         try (
             	Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
             PreparedStatement ps = con.prepareStatement(
                 "UPDATE student SET full_name = ?, gender = ?, dob = ?, mobile = ?, email = ?, password = ? WHERE roll_number = ?");
         ) {
@@ -143,8 +145,9 @@ public class StudentDao {
 
         	Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
 
         con.setAutoCommit(false);
 
@@ -179,8 +182,9 @@ public class StudentDao {
         Class.forName("com.mysql.cj.jdbc.Driver");
         	Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
         PreparedStatement ps = con.prepareStatement(SEARCH_MARKS);
         ps.setInt(1, rollNumber);
         ResultSet rs = ps.executeQuery();
@@ -207,11 +211,11 @@ public class StudentDao {
         StudentDto dto = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-           	Connection con = DriverManager.getConnection(
+           Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
-
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
             PreparedStatement ps =
                     con.prepareStatement(STUDENT_LOGIN);
 

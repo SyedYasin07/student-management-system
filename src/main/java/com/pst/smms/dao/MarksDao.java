@@ -86,8 +86,8 @@ public class MarksDao {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA"
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
 );
 			PreparedStatement ps=con.prepareStatement( ADD_MARKS_QUERY);
 			ps.setString(1, bo.getExamType());
@@ -113,8 +113,9 @@ public class MarksDao {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
 			PreparedStatement ps=con.prepareStatement( UPDATE_STUDENT_MARKS);
 			ps.setString(1, bo.getExamType());
 			ps.setInt(2, bo.getYear());
@@ -140,8 +141,9 @@ public class MarksDao {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
 		PreparedStatement ps=con.prepareStatement( GET_ALL_STUDENT_MARKS);
 		ResultSet rs =ps.executeQuery();
 		while(rs.next()) {
@@ -171,8 +173,9 @@ public class MarksDao {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
 		PreparedStatement ps=con.prepareStatement( GET_MARKS_BY_ROLLNUMBER_AND_TYPE );
 		ps.setInt(1, rollNumber);
 		ps.setString(2,examType );
@@ -188,11 +191,11 @@ public class MarksDao {
 
     Class.forName("com.mysql.cj.jdbc.Driver");
 
-    Connection con = DriverManager.getConnection(
-        "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-        "2J2wJTF7x3wPsnw.root",
-        "Yn3lT6BxbdE8VJIA"
-    );
+   Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
 
     PreparedStatement ps = con.prepareStatement(DELETE_MARKS);
 
@@ -211,8 +214,9 @@ public class MarksDao {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
     "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-    "2J2wJTF7x3wPsnw.root",
-    "Yn3lT6BxbdE8VJIA");
+    "3Qag8NZWqmf6rKZ.root",
+    "hMR5uQ0cUZGxlUef"
+);
 		PreparedStatement ps=con.prepareStatement( GET_MARKS );
 		ps.setString(1, rollNumber);
 		ResultSet rs =ps.executeQuery();
