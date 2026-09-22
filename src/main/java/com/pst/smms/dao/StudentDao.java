@@ -31,7 +31,10 @@ public class StudentDao {
     	  List<StudentDto> list = new ArrayList<StudentDto>(); 
         try {
         	 Class.forName("com.mysql.cj.jdbc.Driver");
-             Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
+            	Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "2J2wJTF7x3wPsnw.root",
+    "Yn3lT6BxbdE8VJIA");
 
              PreparedStatement ps = con.prepareStatement(SELECT_ALL_STUDENTS);
              ResultSet rs=ps.executeQuery();
@@ -51,7 +54,10 @@ public class StudentDao {
     // ✅ Insert new student
     public int createNewStudent(StudentBo bo) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
+        	Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "2J2wJTF7x3wPsnw.root",
+    "Yn3lT6BxbdE8VJIA");
              PreparedStatement ps = con.prepareStatement(ADD_NEW_STUDENT) ;
             		 
 
@@ -73,7 +79,10 @@ public class StudentDao {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
+            	Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "2J2wJTF7x3wPsnw.root",
+    "Yn3lT6BxbdE8VJIA");
 
             PreparedStatement ps = con.prepareStatement(GET_STUDENT_BY_ROLL);
             ps.setInt(1, rollNumber);
@@ -104,7 +113,10 @@ public class StudentDao {
     public int updateStudent(StudentBo bo) {
         int rows = 0;
         try (
-            Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
+            	Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "2J2wJTF7x3wPsnw.root",
+    "Yn3lT6BxbdE8VJIA");
             PreparedStatement ps = con.prepareStatement(
                 "UPDATE student SET full_name = ?, gender = ?, dob = ?, mobile = ?, email = ?, password = ? WHERE roll_number = ?");
         ) {
@@ -129,11 +141,10 @@ public class StudentDao {
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection con = DriverManager.getConnection(
-            "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
-            "2EQjPBpUxoPoZg7.root",
-            "LRGirU0t6adfN74N"
-        );
+        	Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "2J2wJTF7x3wPsnw.root",
+    "Yn3lT6BxbdE8VJIA");
 
         con.setAutoCommit(false);
 
@@ -166,7 +177,10 @@ public class StudentDao {
     	StudentDto dto = null;
         int result = 0;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
+        	Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "2J2wJTF7x3wPsnw.root",
+    "Yn3lT6BxbdE8VJIA");
         PreparedStatement ps = con.prepareStatement(SEARCH_MARKS);
         ps.setInt(1, rollNumber);
         ResultSet rs = ps.executeQuery();
@@ -193,10 +207,10 @@ public class StudentDao {
         StudentDto dto = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-           
-            Connection con =
-                    DriverManager.getConnection(
-                            "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY", "2EQjPBpUxoPoZg7.root", "sNhZHABWckDg3wgY");
+           	Connection con = DriverManager.getConnection(
+    "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/smms?sslMode=VERIFY_IDENTITY",
+    "2J2wJTF7x3wPsnw.root",
+    "Yn3lT6BxbdE8VJIA");
 
             PreparedStatement ps =
                     con.prepareStatement(STUDENT_LOGIN);
