@@ -16,6 +16,17 @@ A full-stack **Student Management System** developed using **Java, JSP, Servlets
 
 https://student-management-system-wcja.onrender.com/Admin_Student_Login.jsp
 
+
+# 🔐 Demo Login Credentials
+
+Use the following **demo credentials** to access the deployed application.
+
+### 👨‍💼 Admin Login
+
+```text
+User ID: admin
+Password: admin123
+
 ---
 
 # 📖 Project Overview
